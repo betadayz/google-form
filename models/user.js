@@ -3,8 +3,7 @@ const crypto = require("crypto")
 const { v1: uuidv1 } = require('uuid');
 
 
-const mongoose = require('mongoose');
-const { ObjectId } = mongoose.Schema
+
 
 const userSchema = new mongoose.Schema({
     companyName: {
@@ -129,25 +128,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         maxlength: 32
     },
-    category: {
-        type: ObjectId,
-        ref: 'Category',
-        required: true
-    },
     nextOfKinMobileNumber: {
         type: Number,
         default: 0
-    },
-    photo: {
-        data: Buffer,
-        contentType: String
-    },
-    shipping: {
-        required: false,
-        type: Boolean
     }
 },
 { timestamps: true }
 );
 
-module.exports = mongoose.model("Product", productSchema);
+module.exports = mongoose.model("User", userSchema);
