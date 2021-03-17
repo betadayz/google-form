@@ -17,19 +17,29 @@ const userSchema = new mongoose.Schema({
         required: true,
         maxlength: 2000
     },
-    fullName: {
+    firstname: {
         type: String,
         required: true,
         maxlength: 2000
+    },
+    middlename: {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    lastname: {
+        type: String,
+        trim: true,
+        required: true,
     },
     address: {
         type: String,
         required: true,
         maxlength: 2000
     },
-    telePhone: {
-        type: Number,
-        default: 0
+    telephone: {
+        type: String,
+        required: true
     },
     email: {
         type: String,
@@ -39,21 +49,17 @@ const userSchema = new mongoose.Schema({
     },
     stateOfOrigin: {
         type: String,
-        trim: true,
-        required: true,
-        maxlength: 32
+        required: true
     },
     gender: {
         type: String,
         trim: true,
         required: true,
-        maxlength: 32
     },
     maritalStatus: {
         type: String,
         trim: true,
         required: true,
-        maxlength: 32
     },
     spouseName: {
         type: String,
@@ -67,50 +73,39 @@ const userSchema = new mongoose.Schema({
         required: true,
         maxlength: 32
     },
-    DateOfBirth: {
-        type: Number,
-        required: true,
-        default: 0
+    dateOfBirth: {
+        type: Date,
+        required: true
     },
-    DateOfHire: {
-        type: Number,
-        required: true,
-        default: 0
+    dateOfHire: {
+        type: Date,
+        required: true
     },
     religion: {
         type: String,
-        trim: true,
-        required: true,
-        maxlength: 32
+        required: true
     },
     genotype: {
         type: String,
-        trim: true,
-        required: true,
-        maxlength: 32
+        required: true
     },
     highestEducationalQualification: {
         type: String,
-        trim: true,
-        required: true,
-        maxlength: 32
+        required: true
     },
     nationality: {
         type: String,
-        trim: true,
-        required: true,
-        maxlength: 32
+        required: true
     },
     employmentStatus: {
         type: String,
-        trim: true,
         required: true,
-        maxlength: 32
     },
     pensionRSANo: {
-        type: Number
+        type: String,
+        required: true
     },
-    NameOfNextOfKin: {
+    nameOfNextOfKin: {
         type: String,
         trim: true,
         required: true,
@@ -129,8 +124,8 @@ const userSchema = new mongoose.Schema({
         maxlength: 32
     },
     nextOfKinMobileNumber: {
-        type: Number,
-        default: 0
+        type: String,
+        required: true
     }
 },
 { timestamps: true }
